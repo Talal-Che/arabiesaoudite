@@ -12,7 +12,6 @@
     --coral: #D4634A;
     --gold: #C9973A;
     --night: #0D1B2A;
-    --fog: #F5EFE4;
     --white: #FDFAF5;
   }
 
@@ -30,18 +29,13 @@
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    display: flex; flex-direction: column; justify-content: flex-end;
     padding: 0 6vw 8vh;
-    position: relative;
-    overflow: hidden;
-    background: var(--night);
+    position: relative; overflow: hidden;
   }
 
   .hero-bg {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background:
       radial-gradient(ellipse 80% 60% at 70% 30%, rgba(10,79,110,0.45) 0%, transparent 70%),
       radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,151,58,0.2) 0%, transparent 60%),
@@ -50,14 +44,11 @@
 
   .stars { position: absolute; inset: 0; overflow: hidden; }
   .star {
-    position: absolute;
-    width: 2px; height: 2px;
-    background: white;
-    border-radius: 50%;
+    position: absolute; width: 2px; height: 2px;
+    background: white; border-radius: 50%;
     animation: twinkle var(--d, 3s) ease-in-out infinite;
     opacity: var(--o, 0.5);
   }
-
   @keyframes twinkle {
     0%, 100% { opacity: var(--o, 0.5); transform: scale(1); }
     50% { opacity: 0.1; transform: scale(0.5); }
@@ -66,44 +57,16 @@
   .dune { position: absolute; bottom: 0; left: 0; right: 0; height: 280px; }
   .dune svg { width: 100%; height: 100%; }
 
-  .hero-tag {
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    position: relative;
-    animation: fadeUp 1s ease 0.2s both;
-  }
-
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 9vw, 7rem);
-    line-height: 1.0;
-    position: relative;
-    animation: fadeUp 1s ease 0.4s both;
-  }
-
+  .hero-tag { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; position: relative; animation: fadeUp 1s ease 0.2s both; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 9vw, 7rem); line-height: 1.0; position: relative; animation: fadeUp 1s ease 0.4s both; }
   .hero-title em { font-style: italic; color: var(--sand); }
+  .hero-subtitle { font-size: 1rem; color: rgba(255,255,255,0.55); margin-top: 1.5rem; max-width: 420px; line-height: 1.7; position: relative; animation: fadeUp 1s ease 0.6s both; }
 
-  .hero-subtitle {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.55);
-    margin-top: 1.5rem;
-    max-width: 420px;
-    line-height: 1.7;
-    position: relative;
-    animation: fadeUp 1s ease 0.6s both;
-  }
+  .hero-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; position: relative; animation: fadeUp 1s ease 0.8s both; }
+  .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--sand); line-height: 1; }
+  .hero-stat-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 4px; }
 
-  .scroll-hint {
-    position: absolute;
-    bottom: 3vh; right: 6vw;
-    display: flex; flex-direction: column;
-    align-items: center; gap: 8px;
-    opacity: 0.4;
-    animation: fadeUp 1s ease 1s both;
-  }
+  .scroll-hint { position: absolute; bottom: 3vh; right: 6vw; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0.4; animation: fadeUp 1s ease 1s both; }
   .scroll-hint span { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; writing-mode: vertical-rl; }
   .scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, white, transparent); }
 
@@ -117,105 +80,67 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 1.5rem 6vw;
     display: flex; justify-content: space-between; align-items: center;
-    backdrop-filter: blur(12px);
-    background: rgba(13,27,42,0.7);
+    backdrop-filter: blur(12px); background: rgba(13,27,42,0.7);
     border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem; letter-spacing: 0.05em; color: var(--sand);
-  }
-
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; letter-spacing: 0.05em; color: var(--sand); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    text-decoration: none; color: rgba(255,255,255,0.5);
-    font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s;
-  }
+  .nav-links a { text-decoration: none; color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
 
-  /* ── SECTION ── */
+  /* ── SECTIONS ── */
   .section { padding: 8vh 6vw; }
-
   .section-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 1rem; }
   .section-title em { font-style: italic; color: var(--sand); }
+  .section-intro { font-size: 0.9rem; color: rgba(255,255,255,0.45); line-height: 1.8; max-width: 640px; margin-bottom: 1.5rem; }
   .divider { width: 60px; height: 2px; background: var(--coral); margin-bottom: 3rem; }
 
-  /* ── CARDS ── */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem; margin-top: 2rem;
-  }
-
-  .card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px; overflow: hidden;
-    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-    cursor: pointer; position: relative;
-  }
+  /* ── CARDS GRID ── */
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; cursor: pointer; }
   .card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.2); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-
   .card-header { padding: 2rem 1.8rem 1.2rem; display: flex; align-items: flex-start; justify-content: space-between; }
   .card-icon { font-size: 2.2rem; line-height: 1; }
   .card-badge { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; font-weight: 500; }
   .badge-plongee { background: rgba(10,79,110,0.5); color: #7ECFEF; border: 1px solid rgba(10,79,110,0.8); }
   .badge-desert { background: rgba(201,151,58,0.2); color: var(--gold); border: 1px solid rgba(201,151,58,0.4); }
   .badge-ville { background: rgba(212,99,74,0.2); color: #EE9982; border: 1px solid rgba(212,99,74,0.4); }
-
   .card-body { padding: 0 1.8rem 2rem; }
   .card-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
   .card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 1.2rem; }
   .card-meta { display: flex; gap: 1rem; flex-wrap: wrap; }
   .meta-item { display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: rgba(255,255,255,0.35); }
-  .meta-item span:first-child { font-size: 0.9rem; }
 
   /* ── FEATURED ── */
   .featured { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-
   @media (max-width: 768px) {
     .featured { grid-template-columns: 1fr; }
     .nav-links { display: none; }
+    .hero-stats { gap: 1.5rem; }
+    .day-row { grid-template-columns: 60px 1fr; }
+    .day-row .day-tag { display: none; }
   }
 
-  .featured-card {
-    border-radius: 20px; padding: 2.5rem; position: relative;
-    overflow: hidden; min-height: 380px;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    transition: transform 0.35s ease;
-  }
+  .featured-card { border-radius: 20px; padding: 2.5rem; position: relative; overflow: hidden; min-height: 420px; display: flex; flex-direction: column; justify-content: flex-end; transition: transform 0.35s ease; cursor: pointer; }
   .featured-card:hover { transform: scale(1.02); }
   .featured-card.plongee { background: linear-gradient(160deg, rgba(10,79,110,0.9) 0%, rgba(5,30,50,0.95) 100%); border: 1px solid rgba(10,79,110,0.6); }
   .featured-card.desert { background: linear-gradient(160deg, rgba(100,65,20,0.9) 0%, rgba(30,15,5,0.95) 100%); border: 1px solid rgba(201,151,58,0.4); }
 
-  .featured-bg-text {
-    position: absolute; top: 1.5rem; right: 1.5rem;
-    font-family: 'Playfair Display', serif; font-size: clamp(5rem, 12vw, 9rem);
-    font-style: italic; opacity: 0.06; line-height: 1; pointer-events: none; color: white;
-  }
-
+  .featured-bg-text { position: absolute; top: 1.5rem; right: 1.5rem; font-family: 'Playfair Display', serif; font-size: clamp(5rem, 12vw, 9rem); font-style: italic; opacity: 0.06; line-height: 1; pointer-events: none; color: white; }
   .featured-tag { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1rem; }
   .plongee .featured-tag { color: #7ECFEF; }
   .desert .featured-tag { color: var(--gold); }
-
   .featured-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); line-height: 1.15; margin-bottom: 1rem; }
   .featured-desc { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 1.5rem; }
-
   .featured-spots { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.8rem; }
-  .spot { display: flex; align-items: center; gap: 0.75rem; font-size: 0.82rem; color: rgba(255,255,255,0.75); }
-  .spot-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .spot { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.82rem; color: rgba(255,255,255,0.75); }
+  .spot-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
   .plongee .spot-dot { background: #7ECFEF; }
   .desert .spot-dot { background: var(--gold); }
   .spot-tip { font-size: 0.7rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
 
-  .cta-btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 0.7rem 1.4rem; border-radius: 8px;
-    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
-    text-decoration: none; transition: all 0.3s; width: fit-content; cursor: pointer; border: none;
-  }
+  .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 0.7rem 1.4rem; border-radius: 8px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-decoration: none; transition: all 0.3s; width: fit-content; cursor: pointer; border: none; }
   .plongee .cta-btn { background: rgba(126,207,239,0.15); color: #7ECFEF; border: 1px solid rgba(126,207,239,0.3); }
   .plongee .cta-btn:hover { background: rgba(126,207,239,0.25); }
   .desert .cta-btn { background: rgba(201,151,58,0.15); color: var(--gold); border: 1px solid rgba(201,151,58,0.3); }
@@ -223,25 +148,40 @@
 
   /* ── PLANNING ── */
   .planning-section { background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .planning-grid { display: flex; flex-direction: column; gap: 0; }
-
-  .day-row {
-    display: grid; grid-template-columns: 80px 1fr auto;
-    gap: 1.5rem; align-items: center; padding: 1.4rem 0.8rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    transition: background 0.2s; border-radius: 8px;
-  }
+  .planning-grid { display: flex; flex-direction: column; }
+  .day-row { display: grid; grid-template-columns: 80px 1fr auto; gap: 1.5rem; align-items: center; padding: 1.4rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s; border-radius: 8px; }
   .day-row:hover { background: rgba(255,255,255,0.03); }
-
   .day-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: rgba(255,255,255,0.12); font-style: italic; font-weight: 700; }
   .day-title { font-size: 0.92rem; font-weight: 500; margin-bottom: 3px; }
   .day-detail { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
   .day-tag { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
-
   .tag-plongee { background: rgba(10,79,110,0.4); color: #7ECFEF; }
   .tag-desert { background: rgba(201,151,58,0.2); color: var(--gold); }
   .tag-ville { background: rgba(212,99,74,0.2); color: #EE9982; }
   .tag-nature { background: rgba(50,120,60,0.3); color: #8ED19A; }
+
+  /* ── PROVIDERS ── */
+  .provider-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+  .provider { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 1.6rem 1.8rem; display: flex; flex-direction: column; gap: 0.5rem; transition: border-color 0.3s, transform 0.3s; }
+  .provider:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-3px); }
+  .provider-rank { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .provider-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; }
+  .provider-info { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+  .provider-includes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .provider-tag { font-size: 0.65rem; padding: 3px 8px; border-radius: 20px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.08); }
+  .provider-url { font-size: 0.72rem; color: #7ECFEF; text-decoration: none; margin-top: 4px; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s; }
+  .provider-url:hover { color: var(--white); text-decoration: underline; }
+  .provider-url::after { content: '↗'; font-size: 0.65rem; }
+  .provider-price { font-size: 0.82rem; color: var(--sand); margin-top: 4px; font-weight: 500; }
+  .provider-duration { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+  /* ── BUDGET ── */
+  .budget-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .budget-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1.4rem; text-align: center; }
+  .budget-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .budget-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.3rem; }
+  .budget-price { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--sand); }
+  .budget-note { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 4px; }
 
   /* ── TIPS ── */
   .tips-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 2rem; }
@@ -251,51 +191,31 @@
   .tip-title { font-size: 0.85rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--sand); }
   .tip-text { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
 
-  /* ── PROVIDERS ── */
-  .provider-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-top: 2rem; }
-  .provider { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1.4rem 1.6rem; display: flex; flex-direction: column; gap: 0.5rem; }
-  .provider-rank { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-  .provider-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
-  .provider-info { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
-  .provider-url { font-size: 0.72rem; color: #7ECFEF; text-decoration: none; margin-top: 4px; }
-  .provider-price { font-size: 0.8rem; color: var(--sand); margin-top: 4px; }
-
   /* ── FOOTER ── */
-  footer {
-    padding: 4vh 6vw; border-top: 1px solid rgba(255,255,255,0.06);
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
-  }
+  footer { padding: 4vh 6vw; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .footer-logo { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--sand); font-style: italic; }
   .footer-note { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
 
   /* ── MODAL ── */
-  .modal-overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
-    z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 2rem;
-    opacity: 0; pointer-events: none; transition: opacity 0.3s;
-  }
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
   .modal-overlay.open { opacity: 1; pointer-events: all; }
-
-  .modal {
-    background: #121F2D; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;
-    padding: 2.5rem; max-width: 520px; width: 100%;
-    transform: translateY(20px); transition: transform 0.3s;
-    max-height: 85vh; overflow-y: auto;
-  }
+  .modal { background: #121F2D; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2.5rem; max-width: 540px; width: 100%; transform: translateY(20px); transition: transform 0.3s; max-height: 85vh; overflow-y: auto; }
   .modal-overlay.open .modal { transform: translateY(0); }
-
   .modal-close { float: right; background: none; border: none; color: rgba(255,255,255,0.4); font-size: 1.3rem; cursor: pointer; padding: 0; line-height: 1; }
   .modal-close:hover { color: white; }
-
   .modal-tag { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; display: block; }
   .modal-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1rem; line-height: 1.2; }
   .modal-body { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.8; }
-
   .modal-section { margin-top: 1.5rem; }
   .modal-section-title { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); margin-bottom: 0.6rem; }
   .modal-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
   .modal-list li { font-size: 0.83rem; color: rgba(255,255,255,0.6); padding-left: 1rem; position: relative; }
   .modal-list li::before { content: '→'; position: absolute; left: 0; color: var(--coral); font-size: 0.7rem; top: 2px; }
+  .modal-cta { display: inline-flex; align-items: center; gap: 8px; margin-top: 1.5rem; padding: 0.7rem 1.4rem; border-radius: 8px; font-size: 0.78rem; font-weight: 500; text-decoration: none; transition: background 0.2s; }
+  .modal-cta.gold { background: rgba(201,151,58,0.15); color: var(--gold); border: 1px solid rgba(201,151,58,0.3); }
+  .modal-cta.gold:hover { background: rgba(201,151,58,0.28); }
+  .modal-cta.blue { background: rgba(126,207,239,0.1); color: #7ECFEF; border: 1px solid rgba(126,207,239,0.3); }
+  .modal-cta.blue:hover { background: rgba(126,207,239,0.2); }
 </style>
 </head>
 <body>
@@ -307,6 +227,7 @@
     <li><a href="#experiences">Expériences</a></li>
     <li><a href="#planning">Planning</a></li>
     <li><a href="#prestataires">Prestataires</a></li>
+    <li><a href="#budget">Budget</a></li>
     <li><a href="#conseils">Conseils</a></li>
   </ul>
 </nav>
@@ -315,100 +236,57 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="stars" id="stars"></div>
-
   <div class="dune">
     <svg viewBox="0 0 1440 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,280 L0,160 Q180,100 360,140 Q540,180 720,120 Q900,60 1080,100 Q1260,140 1440,80 L1440,280 Z" fill="rgba(13,27,42,1)"/>
       <path d="M0,280 L0,200 Q200,150 400,170 Q600,190 800,150 Q1000,110 1200,140 Q1350,160 1440,120 L1440,280 Z" fill="rgba(13,27,42,0.7)"/>
     </svg>
   </div>
-
   <div class="hero-tag">7–8 jours · Excursions depuis Djeddah</div>
   <h1 class="hero-title">Plongée<br>& <em>Désert</em></h1>
   <p class="hero-subtitle">Mer Rouge, dunes dorées et pépites cachées — ton programme sur mesure avec voiture, en moins de 2h30 de route.</p>
-
+  <div class="hero-stats">
+    <div><div class="hero-stat-num">7</div><div class="hero-stat-label">Jours</div></div>
+    <div><div class="hero-stat-num">6</div><div class="hero-stat-label">Destinations</div></div>
+    <div><div class="hero-stat-num">2h30</div><div class="hero-stat-label">Max de route</div></div>
+  </div>
   <div class="scroll-hint">
     <div class="scroll-line"></div>
     <span>Découvrir</span>
   </div>
 </section>
 
-<!-- EXPERIENCES FEATURED -->
+<!-- EXPERIENCES -->
 <section class="section" id="experiences">
   <div class="section-label">Les deux piliers</div>
   <h2 class="section-title">Tes <em>expériences</em> clés</h2>
+  <p class="section-intro">Deux univers opposés à quelques heures de Djeddah — les récifs de la mer Rouge et les dunes infinies du Hejaz. Les deux peuvent s'enchaîner en quelques jours.</p>
   <div class="divider"></div>
-
   <div class="featured">
-    <!-- PLONGÉE -->
     <div class="featured-card plongee" onclick="openModal('plongee')">
       <div class="featured-bg-text">Mer</div>
       <div class="featured-tag">🤿 Plongée · Mer Rouge</div>
       <h3 class="featured-title">Récifs coralliens &amp; épaves légendaires</h3>
-      <p class="featured-desc">La mer Rouge abrite certains des récifs les mieux préservés au monde. Avec un baptême déjà fait, tu peux accéder à des sites d'exception dès la première sortie.</p>
+      <p class="featured-desc">La mer Rouge abrite certains des récifs les mieux préservés au monde. Avec un baptême déjà fait, tu accèdes à des sites d'exception dès la première sortie.</p>
       <div class="featured-spots">
-        <div class="spot">
-          <div class="spot-dot"></div>
-          <div>
-            <div>Cable Wreck — Épave à 24 m</div>
-            <div class="spot-tip">Idéal niveau intermédiaire · Faune abondante</div>
-          </div>
-        </div>
-        <div class="spot">
-          <div class="spot-dot"></div>
-          <div>
-            <div>Fifi Reef — Récif corallien</div>
-            <div class="spot-tip">Raies · Requins pointe blanche · Tortues</div>
-          </div>
-        </div>
-        <div class="spot">
-          <div class="spot-dot"></div>
-          <div>
-            <div>Bayadah Island — 40 min en bateau</div>
-            <div class="spot-tip">Eaux cristallines · Faible fréquentation</div>
-          </div>
-        </div>
-        <div class="spot">
-          <div class="spot-dot"></div>
-          <div>
-            <div>La Mer Beach Resort — En bord de plage</div>
-            <div class="spot-tip">Plateau corallien 10–12 m · Tortues vertes</div>
-          </div>
-        </div>
+        <div class="spot"><div class="spot-dot"></div><div><div>Cable Wreck — Épave à 24 m</div><div class="spot-tip">Idéal niveau intermédiaire · Faune abondante</div></div></div>
+        <div class="spot"><div class="spot-dot"></div><div><div>Fifi Reef — Récif corallien</div><div class="spot-tip">Raies · Requins pointe blanche · Tortues</div></div></div>
+        <div class="spot"><div class="spot-dot"></div><div><div>Bayadah Island — 40 min en bateau</div><div class="spot-tip">Eaux cristallines · Faible fréquentation</div></div></div>
+        <div class="spot"><div class="spot-dot"></div><div><div>La Mer Beach Resort — En bord de plage</div><div class="spot-tip">Plateau corallien 10–12 m · Tortues vertes</div></div></div>
       </div>
-      <button class="cta-btn">Voir les détails →</button>
+      <button class="cta-btn" onclick="event.stopPropagation();openModal('plongee')">Voir les détails →</button>
     </div>
-
-    <!-- DÉSERT -->
     <div class="featured-card desert" onclick="openModal('desert')">
       <div class="featured-bg-text">Sable</div>
       <div class="featured-tag">🏜️ 4x4 · Désert</div>
       <h3 class="featured-title">Dunes, couchers de soleil &amp; pistes sauvages</h3>
-      <p class="featured-desc">À 1h–1h30 de Djeddah, les premières grandes dunes du Hejaz t'attendent. Safari organisé ou exploration libre, les deux sont faisables avec ta voiture.</p>
+      <p class="featured-desc">À 1h–1h30 de Djeddah, les premières grandes dunes t'attendent. Safari organisé ou exploration libre, les deux sont faisables avec ta voiture.</p>
       <div class="featured-spots">
-        <div class="spot">
-          <div class="spot-dot"></div>
-          <div>
-            <div>Nord-Est de Djeddah — Dunes libres</div>
-            <div class="spot-tip">1h30 de route · Coucher de soleil magique</div>
-          </div>
-        </div>
-        <div class="spot">
-          <div class="spot-dot"></div>
-          <div>
-            <div>Jeddah Desert Safari — Organisé</div>
-            <div class="spot-tip">4x4 + dune bashing + camp bédouin</div>
-          </div>
-        </div>
-        <div class="spot">
-          <div class="spot-dot"></div>
-          <div>
-            <div>Wadi Al-Lith — Route côtière sud</div>
-            <div class="spot-tip">Vallée encaissée · Paysages sauvages</div>
-          </div>
-        </div>
+        <div class="spot"><div class="spot-dot"></div><div><div>Desert Night Tours — Safari organisé</div><div class="spot-tip">6–7h · Dune bashing + camp bédouin + dîner BBQ</div></div></div>
+        <div class="spot"><div class="spot-dot"></div><div><div>Nord-Est de Djeddah — Dunes libres</div><div class="spot-tip">1h30 de route · Coucher de soleil magique</div></div></div>
+        <div class="spot"><div class="spot-dot"></div><div><div>Wadi Al-Lith — Route côtière sud</div><div class="spot-tip">Vallée encaissée · Paysages sauvages</div></div></div>
       </div>
-      <button class="cta-btn">Voir les détails →</button>
+      <button class="cta-btn" onclick="event.stopPropagation();openModal('desert')">Voir les détails →</button>
     </div>
   </div>
 </section>
@@ -417,96 +295,55 @@
 <section class="section">
   <div class="section-label">Compléter ton séjour</div>
   <h2 class="section-title">Autres <em>excursions</em> proches</h2>
+  <p class="section-intro">Toutes accessibles en voiture depuis Djeddah — montagne fraîche, côte sauvage, port authentique ou histoire millénaire.</p>
   <div class="divider"></div>
-
   <div class="cards-grid">
     <div class="card" onclick="openModal('taif')">
-      <div class="card-header">
-        <div class="card-icon">🌹</div>
-        <span class="card-badge badge-ville">1h de route</span>
-      </div>
+      <div class="card-header"><div class="card-icon">🌹</div><span class="card-badge badge-ville">1h de route</span></div>
       <div class="card-body">
         <div class="card-title">Taïf</div>
-        <p class="card-desc">La ville des roses damascènes, perchée en altitude à 1 800 m. Marchés, parfums, fraîcheur et palais historiques. Idéale sur 2 jours.</p>
-        <div class="card-meta">
-          <div class="meta-item"><span>🌡️</span><span>Plus frais qu'en ville</span></div>
-          <div class="meta-item"><span>🕌</span><span>Palais Shubra</span></div>
-        </div>
+        <p class="card-desc">La ville des roses damascènes, perchée à 1 800 m. Marchés, parfums, fraîcheur et palais historiques. Idéale sur 2 jours.</p>
+        <div class="card-meta"><div class="meta-item"><span>🌡️</span><span>Plus frais</span></div><div class="meta-item"><span>🕌</span><span>Palais Shubra</span></div></div>
       </div>
     </div>
-
     <div class="card" onclick="openModal('cote-nord')">
-      <div class="card-header">
-        <div class="card-icon">🏖️</div>
-        <span class="card-badge badge-plongee">1h30 au nord</span>
-      </div>
+      <div class="card-header"><div class="card-icon">🏖️</div><span class="card-badge badge-plongee">1h30 au nord</span></div>
       <div class="card-body">
         <div class="card-title">Côte Nord · Masturah</div>
         <p class="card-desc">Plages quasi désertes de la mer Rouge, eaux turquoise et snorkeling accessible. Parfait pour une journée plage détendue.</p>
-        <div class="card-meta">
-          <div class="meta-item"><span>🤿</span><span>Snorkeling</span></div>
-          <div class="meta-item"><span>🌊</span><span>Eaux turquoise</span></div>
-        </div>
+        <div class="card-meta"><div class="meta-item"><span>🤿</span><span>Snorkeling</span></div><div class="meta-item"><span>🌊</span><span>Eaux turquoise</span></div></div>
       </div>
     </div>
-
     <div class="card" onclick="openModal('al-lith')">
-      <div class="card-header">
-        <div class="card-icon">🚢</div>
-        <span class="card-badge badge-desert">2h au sud</span>
-      </div>
+      <div class="card-header"><div class="card-icon">🚢</div><span class="card-badge badge-desert">2h au sud</span></div>
       <div class="card-body">
         <div class="card-title">Al-Lith · Côte Sud</div>
-        <p class="card-desc">Petit port de pêche authentique avec marché au poisson tôt le matin. Plages sauvages préservées, ambiance locale loin du tourisme.</p>
-        <div class="card-meta">
-          <div class="meta-item"><span>🐟</span><span>Marché poisson</span></div>
-          <div class="meta-item"><span>🏕️</span><span>Côte sauvage</span></div>
-        </div>
+        <p class="card-desc">Petit port de pêche authentique avec marché au poisson tôt le matin. Plages sauvages préservées, ambiance locale.</p>
+        <div class="card-meta"><div class="meta-item"><span>🐟</span><span>Marché poisson</span></div><div class="meta-item"><span>🏕️</span><span>Côte sauvage</span></div></div>
       </div>
     </div>
-
     <div class="card" onclick="openModal('badr')">
-      <div class="card-header">
-        <div class="card-icon">🕌</div>
-        <span class="card-badge badge-ville">2h30 nord-est</span>
-      </div>
+      <div class="card-header"><div class="card-icon">🕌</div><span class="card-badge badge-ville">2h30 nord-est</span></div>
       <div class="card-body">
         <div class="card-title">Badr</div>
-        <p class="card-desc">Site historique islamique majeur — lieu de la bataille de Badr. Musée, mémorial et paysages de plaines désertiques historiques.</p>
-        <div class="card-meta">
-          <div class="meta-item"><span>📜</span><span>Histoire</span></div>
-          <div class="meta-item"><span>🏛️</span><span>Musée</span></div>
-        </div>
+        <p class="card-desc">Site historique islamique majeur — lieu de la bataille de Badr. Musée, mémorial et paysages de plaines désertiques.</p>
+        <div class="card-meta"><div class="meta-item"><span>📜</span><span>Histoire</span></div><div class="meta-item"><span>🏛️</span><span>Musée</span></div></div>
       </div>
     </div>
-
     <div class="card" onclick="openModal('djeddah')">
-      <div class="card-header">
-        <div class="card-icon">🏛️</div>
-        <span class="card-badge badge-ville">Sur place</span>
-      </div>
+      <div class="card-header"><div class="card-icon">🏛️</div><span class="card-badge badge-ville">Sur place</span></div>
       <div class="card-body">
         <div class="card-title">Al-Balad · Djeddah</div>
-        <p class="card-desc">La vieille ville classée UNESCO avec ses maisons à moucharabiehs, ses souqs et sa corniche animée. À ne pas manquer en début de séjour.</p>
-        <div class="card-meta">
-          <div class="meta-item"><span>🏺</span><span>UNESCO</span></div>
-          <div class="meta-item"><span>🛍️</span><span>Souqs</span></div>
-        </div>
+        <p class="card-desc">La vieille ville classée UNESCO avec ses maisons à moucharabiehs, ses souqs et sa corniche animée.</p>
+        <div class="card-meta"><div class="meta-item"><span>🏺</span><span>UNESCO</span></div><div class="meta-item"><span>🛍️</span><span>Souqs</span></div></div>
       </div>
     </div>
-
     <div class="card" onclick="openModal('snorkeling')">
-      <div class="card-header">
-        <div class="card-icon">🐠</div>
-        <span class="card-badge badge-plongee">Journée libre</span>
-      </div>
+      <div class="card-header"><div class="card-icon">🐠</div><span class="card-badge badge-plongee">Journée libre</span></div>
       <div class="card-body">
         <div class="card-title">Snorkeling libre</div>
-        <p class="card-desc">Obhur Creek ou la North Corniche offrent des spots accessibles à pied ou à 20 min de route pour du snorkeling en autonomie totale.</p>
-        <div class="card-meta">
-          <div class="meta-item"><span>🐢</span><span>Tortues</span></div>
-          <div class="meta-item"><span>🆓</span><span>Gratuit</span></div>
-        </div>
+        <p class="card-desc">Obhur Creek ou la North Corniche offrent des spots accessibles à 20 min de route pour du snorkeling en autonomie totale.</p>
+        <div class="card-meta"><div class="meta-item"><span>🐢</span><span>Tortues</span></div><div class="meta-item"><span>🆓</span><span>Gratuit</span></div></div>
       </div>
     </div>
   </div>
@@ -516,63 +353,42 @@
 <section class="section planning-section" id="planning">
   <div class="section-label">Semaine type</div>
   <h2 class="section-title">Le <em>planning</em> 7 jours</h2>
+  <p class="section-intro">Un programme équilibré entre mer, désert et culture. Chaque journée est autonome — facile à réorganiser selon la météo ou tes envies.</p>
   <div class="divider"></div>
-
   <div class="planning-grid">
     <div class="day-row">
       <div class="day-num">01</div>
-      <div class="day-content">
-        <div class="day-title">Al-Balad · Corniche · Arrivée</div>
-        <div class="day-detail">Vieille ville UNESCO, souqs, coucher de soleil sur la Corniche</div>
-      </div>
+      <div class="day-content"><div class="day-title">Al-Balad · Corniche · Arrivée</div><div class="day-detail">Vieille ville UNESCO, souqs, coucher de soleil sur la Corniche</div></div>
       <span class="day-tag tag-ville">Ville</span>
     </div>
     <div class="day-row">
       <div class="day-num">02</div>
-      <div class="day-content">
-        <div class="day-title">🤿 Plongée Bateau — Cable Wreck ou Fifi Reef</div>
-        <div class="day-detail">Départ 9h · Retour 16h · Réserver 2–3 jours à l'avance</div>
-      </div>
+      <div class="day-content"><div class="day-title">🤿 Plongée Bateau — Cable Wreck ou Fifi Reef</div><div class="day-detail">Départ 9h · Retour 16h · Réserver 2–3 jours à l'avance</div></div>
       <span class="day-tag tag-plongee">Plongée</span>
     </div>
     <div class="day-row">
       <div class="day-num">03</div>
-      <div class="day-content">
-        <div class="day-title">🏜️ Desert Safari 4x4 + Dunes</div>
-        <div class="day-detail">Départ 15h–16h · Dune bashing + coucher de soleil + camp bédouin</div>
-      </div>
+      <div class="day-content"><div class="day-title">🏜️ Desert Safari — Desert Night Tours</div><div class="day-detail">Départ 15h–16h · 6–7h · Dune bashing + chameaux + dîner BBQ + étoiles</div></div>
       <span class="day-tag tag-desert">Désert</span>
     </div>
     <div class="day-row">
       <div class="day-num">04</div>
-      <div class="day-content">
-        <div class="day-title">🌹 Taïf — Palais Shubra, Souqs, Vieille Ville</div>
-        <div class="day-detail">Départ 9h · Marché aux roses, parfumeries, Souq Okaz</div>
-      </div>
+      <div class="day-content"><div class="day-title">🌹 Taïf — Palais Shubra, Souqs, Vieille Ville</div><div class="day-detail">Départ 9h · Marché aux roses, parfumeries, Souq Okaz</div></div>
       <span class="day-tag tag-ville">Excursion</span>
     </div>
     <div class="day-row">
       <div class="day-num">05</div>
-      <div class="day-content">
-        <div class="day-title">🌿 Taïf — Al-Hada, Al-Shafa, Téléphérique</div>
-        <div class="day-detail">Villages de montagne, brume, fraîcheur, panoramas</div>
-      </div>
+      <div class="day-content"><div class="day-title">🌿 Taïf — Al-Hada, Al-Shafa, Téléphérique</div><div class="day-detail">Villages de montagne, brume, fraîcheur, panoramas</div></div>
       <span class="day-tag tag-nature">Montagne</span>
     </div>
     <div class="day-row">
       <div class="day-num">06</div>
-      <div class="day-content">
-        <div class="day-title">🏖️ Côte Nord · Masturah Beach</div>
-        <div class="day-detail">Plage sauvage · Snorkeling · Détente · 1h30 au nord</div>
-      </div>
+      <div class="day-content"><div class="day-title">🏖️ Côte Nord · Masturah Beach</div><div class="day-detail">Plage sauvage · Snorkeling · Détente · 1h30 au nord</div></div>
       <span class="day-tag tag-plongee">Mer</span>
     </div>
     <div class="day-row">
       <div class="day-num">07</div>
-      <div class="day-content">
-        <div class="day-title">🤿 2ème Plongée ou Bayadah Island</div>
-        <div class="day-detail">Sortie bateau · Récifs préservés · Faible fréquentation</div>
-      </div>
+      <div class="day-content"><div class="day-title">🤿 2ème Plongée ou Bayadah Island</div><div class="day-detail">Sortie bateau · Récifs préservés · Faible fréquentation</div></div>
       <span class="day-tag tag-plongee">Plongée</span>
     </div>
   </div>
@@ -580,39 +396,98 @@
 
 <!-- PRESTATAIRES -->
 <section class="section" id="prestataires">
-  <div class="section-label">Centres de plongée</div>
+  <div class="section-label">Centres de plongée & tours</div>
   <h2 class="section-title"><em>Prestataires</em> recommandés</h2>
+  <p class="section-intro">Contacts directs et vérifiés. Clique sur les liens pour accéder aux sites officiels et réserver directement.</p>
   <div class="divider"></div>
-
   <div class="provider-list">
+
     <div class="provider">
       <div class="provider-rank">🥇 Meilleur pour débutants</div>
       <div class="provider-name">Dive In Jeddah</div>
       <div class="provider-info">Sorties bateau quotidiennes. Groupes réduits, matériel haut de gamme, 2 moteurs 250 CV. Idéal pour ton niveau.</div>
-      <a class="provider-url" href="#">diveinjed.com</a>
+      <div class="provider-includes">
+        <span class="provider-tag">Bateau</span>
+        <span class="provider-tag">Matériel inclus</span>
+        <span class="provider-tag">Petits groupes</span>
+      </div>
+      <a class="provider-url" href="https://www.diveinjed.com" target="_blank" rel="noopener">diveinjed.com</a>
       <div class="provider-price">300–500 SAR / sortie</div>
     </div>
+
     <div class="provider">
       <div class="provider-rank">🥈 Le plus grand centre</div>
       <div class="provider-name">Al-Haddad Scuba</div>
       <div class="provider-info">Centre certifié SSI depuis 2011. Le plus grand de l'Arabie Saoudite. Sorties quotidiennes vers les récifs de la mer Rouge.</div>
-      <a class="provider-url" href="#">haddadscuba.com</a>
+      <div class="provider-includes">
+        <span class="provider-tag">SSI certifié</span>
+        <span class="provider-tag">Formations</span>
+        <span class="provider-tag">Quotidien</span>
+      </div>
+      <a class="provider-url" href="https://www.haddadscuba.com" target="_blank" rel="noopener">haddadscuba.com</a>
       <div class="provider-price">300–500 SAR / sortie</div>
     </div>
+
     <div class="provider">
       <div class="provider-rank">🥉 Expérience premium</div>
       <div class="provider-name">17Sixty Diving Centre</div>
       <div class="provider-info">Centre PADI avec fonds de 5 à 30 m. Murs coralliens, grottes, et plongées nocturnes pour une expérience unique.</div>
-      <a class="provider-url" href="#">17sixty.com</a>
+      <div class="provider-includes">
+        <span class="provider-tag">PADI certifié</span>
+        <span class="provider-tag">Plongée nocturne</span>
+        <span class="provider-tag">5–30 m</span>
+      </div>
+      <a class="provider-url" href="https://www.17sixty.com" target="_blank" rel="noopener">17sixty.com</a>
       <div class="provider-price">400–600 SAR / sortie</div>
     </div>
-    <div class="provider" style="border-color:rgba(201,151,58,0.3)">
-      <div class="provider-rank" style="color:var(--gold)">🏜️ Désert</div>
-      <div class="provider-name">Jeddah Desert Safari</div>
-      <div class="provider-info">4x4 climatisé + dune bashing + quad + camp bédouin. Transfert inclus depuis Djeddah. Sortie sunset recommandée.</div>
-      <a class="provider-url" href="#" style="color:var(--gold)">jeddahdesertsafari.com</a>
-      <div class="provider-price">Chercher sur Viator ou GetYourGuide</div>
+
+    <!-- Desert Night Tours - vedette -->
+    <div class="provider" style="border-color:rgba(201,151,58,0.4); background: rgba(201,151,58,0.04);">
+      <div class="provider-rank" style="color:var(--gold)">🏜️ Désert · Coup de cœur ★</div>
+      <div class="provider-name">Desert Night Tours</div>
+      <div class="provider-info">Evening Desert Safari 6–7h depuis Djeddah. 4x4 climatisé, dune bashing, ferme de chameaux, balade à dos de chameau, séance photo en costume arabe, dîner BBQ sous les étoiles et chicha. Prise en charge incluse depuis ton hôtel.</div>
+      <div class="provider-includes">
+        <span class="provider-tag" style="border-color:rgba(201,151,58,0.3); color:rgba(201,151,58,0.9)">4x4 inclus</span>
+        <span class="provider-tag" style="border-color:rgba(201,151,58,0.3); color:rgba(201,151,58,0.9)">Dîner BBQ</span>
+        <span class="provider-tag" style="border-color:rgba(201,151,58,0.3); color:rgba(201,151,58,0.9)">Chameaux</span>
+        <span class="provider-tag" style="border-color:rgba(201,151,58,0.3); color:rgba(201,151,58,0.9)">Étoiles</span>
+        <span class="provider-tag" style="border-color:rgba(201,151,58,0.3); color:rgba(201,151,58,0.9)">Départ Djeddah</span>
+        <span class="provider-tag" style="border-color:rgba(201,151,58,0.3); color:rgba(201,151,58,0.9)">Chicha</span>
+      </div>
+      <a class="provider-url" href="https://www.desertnighttours.com/tour-package/evening-desert-safari-jeddah" target="_blank" rel="noopener" style="color:var(--gold)">desertnighttours.com</a>
+      <div class="provider-price" style="color:var(--gold); font-size:0.95rem;">349 SAR / personne</div>
+      <div class="provider-duration">Durée : 6–7h · bookings@desertnighttours.com</div>
     </div>
+
+    <div class="provider">
+      <div class="provider-rank">🔎 Comparer les offres</div>
+      <div class="provider-name">Viator & GetYourGuide</div>
+      <div class="provider-info">Plateformes pour comparer safaris et sorties plongée. Avis vérifiés, annulation gratuite souvent disponible.</div>
+      <div class="provider-includes">
+        <span class="provider-tag">Avis vérifiés</span>
+        <span class="provider-tag">Annulation flexible</span>
+      </div>
+      <a class="provider-url" href="https://www.viator.com/Jeddah/d4461-ttd" target="_blank" rel="noopener">viator.com · Jeddah</a>
+      <a class="provider-url" href="https://www.getyourguide.com/jeddah-l1637/" target="_blank" rel="noopener" style="margin-top:2px;">getyourguide.com · Jeddah</a>
+      <div class="provider-price">Selon activité</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="section" id="budget">
+  <div class="section-label">Estimation des coûts</div>
+  <h2 class="section-title">Budget <em>indicatif</em></h2>
+  <p class="section-intro">Fourchette pour 1 personne, hors hébergement et transport personnel. Les plongées et safari représentent la majorité du budget activités.</p>
+  <div class="divider"></div>
+  <div class="budget-grid">
+    <div class="budget-card"><div class="budget-icon">🤿</div><div class="budget-label">Plongée bateau (x2)</div><div class="budget-price">600–1 000 SAR</div><div class="budget-note">Matériel inclus</div></div>
+    <div class="budget-card"><div class="budget-icon">🏜️</div><div class="budget-label">Desert Safari</div><div class="budget-price">349 SAR</div><div class="budget-note">Dîner + transfert inclus</div></div>
+    <div class="budget-card"><div class="budget-icon">🌹</div><div class="budget-label">Taïf (2 jours)</div><div class="budget-price">~300 SAR</div><div class="budget-note">Entrées + restaurants</div></div>
+    <div class="budget-card"><div class="budget-icon">⛽</div><div class="budget-label">Carburant semaine</div><div class="budget-price">~150 SAR</div><div class="budget-note">Estimation 7 jours</div></div>
+    <div class="budget-card"><div class="budget-icon">🍽️</div><div class="budget-label">Repas / jour</div><div class="budget-price">80–150 SAR</div><div class="budget-note">Selon restaurants</div></div>
+    <div class="budget-card" style="border-color:rgba(201,151,58,0.3)"><div class="budget-icon">💰</div><div class="budget-label">Total activités semaine</div><div class="budget-price" style="color:var(--gold)">~1 800 SAR</div><div class="budget-note">Estimation indicative</div></div>
   </div>
 </section>
 
@@ -621,50 +496,28 @@
   <div class="section-label">Avant de partir</div>
   <h2 class="section-title">Conseils <em>pratiques</em></h2>
   <div class="divider"></div>
-
   <div class="tips-grid">
-    <div class="tip-card">
-      <div class="tip-icon">📅</div>
-      <div class="tip-title">Réserver la plongée tôt</div>
-      <div class="tip-text">Les sorties bateau se remplissent vite. Réserve 2–3 jours à l'avance, surtout en semaine et durant les vacances.</div>
-    </div>
-    <div class="tip-card">
-      <div class="tip-icon">🌅</div>
-      <div class="tip-title">Safari au coucher du soleil</div>
-      <div class="tip-text">Départ idéal vers 15h–16h pour éviter la chaleur et profiter de la lumière dorée sur les dunes. Ambiance garantie.</div>
-    </div>
-    <div class="tip-card">
-      <div class="tip-icon">🚗</div>
-      <div class="tip-title">4x4 en autonomie</div>
-      <div class="tip-text">Si tu pars seul dans le désert, dégonfle les pneus à 1,5–2 bar sur le sable et préviens quelqu'un de ton itinéraire.</div>
-    </div>
-    <div class="tip-card">
-      <div class="tip-icon">🌡️</div>
-      <div class="tip-title">Chaleur & hydratation</div>
-      <div class="tip-text">Prévoir minimum 2L d'eau par personne pour les excursions désert. En plongée, s'hydrater avant et après pour éviter la DCS.</div>
-    </div>
-    <div class="tip-card">
-      <div class="tip-icon">🕐</div>
-      <div class="tip-title">Timing des marchés</div>
-      <div class="tip-text">Pour Al-Lith, le marché aux poissons se tient tôt le matin vers 6h–9h. Partir la veille au soir ou très tôt le matin.</div>
-    </div>
-    <div class="tip-card">
-      <div class="tip-icon">📱</div>
-      <div class="tip-title">Application Maps</div>
-      <div class="tip-text">Google Maps fonctionne bien en Arabie Saoudite. Télécharger les zones hors connexion avant de partir en excursion désert.</div>
-    </div>
+    <div class="tip-card"><div class="tip-icon">📅</div><div class="tip-title">Réserver la plongée tôt</div><div class="tip-text">Les sorties bateau se remplissent vite. Réserve 2–3 jours à l'avance, surtout le week-end et durant les vacances scolaires.</div></div>
+    <div class="tip-card"><div class="tip-icon">🌅</div><div class="tip-title">Safari au coucher du soleil</div><div class="tip-text">Départ idéal vers 15h–16h. Desert Night Tours prend en charge depuis ton hôtel — pas besoin de voiture pour cette excursion.</div></div>
+    <div class="tip-card"><div class="tip-icon">🚗</div><div class="tip-title">4x4 en autonomie</div><div class="tip-text">Si tu pars seul dans le désert, dégonfle les pneus à 1,5–2 bar sur le sable et préviens quelqu'un de ton itinéraire.</div></div>
+    <div class="tip-card"><div class="tip-icon">🌡️</div><div class="tip-title">Chaleur & hydratation</div><div class="tip-text">Prévoir 2L minimum par personne en excursion désert. En plongée, s'hydrater avant et après pour éviter la DCS.</div></div>
+    <div class="tip-card"><div class="tip-icon">🕐</div><div class="tip-title">Timing des marchés</div><div class="tip-text">Pour Al-Lith, le marché aux poissons se tient vers 6h–9h. Partir la veille au soir ou très tôt le matin.</div></div>
+    <div class="tip-card"><div class="tip-icon">📱</div><div class="tip-title">Google Maps offline</div><div class="tip-text">Google Maps fonctionne bien en Arabie Saoudite. Télécharger les zones hors connexion avant toute excursion désert.</div></div>
+    <div class="tip-card"><div class="tip-icon">🌊</div><div class="tip-title">Meilleure saison plongée</div><div class="tip-text">Octobre à avril pour des eaux plus fraîches (24–28°C) et une meilleure visibilité. L'été reste possible mais chaud en surface.</div></div>
+    <div class="tip-card"><div class="tip-icon">👕</div><div class="tip-title">Tenue pour le désert</div><div class="tip-text">Vêtements légers mais couvrants pour le vent de sable. Prévois une veste pour les nuits fraîches et des chaussures fermées.</div></div>
+    <div class="tip-card"><div class="tip-icon">🐪</div><div class="tip-title">La nuit dans le désert</div><div class="tip-text">Loin des lumières de la ville, le ciel étoilé au-dessus des dunes est l'un des moments les plus forts du séjour. À ne pas manquer.</div></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Djeddah Explorer</div>
-  <div class="footer-note">Programme personnalisé · 7–8 jours · Moins de 2h30 de route</div>
+  <div class="footer-note">Programme personnalisé · 7–8 jours · Moins de 2h30 de route · Informations non contractuelles</div>
 </footer>
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
-  <div class="modal" id="modal-content">
+  <div class="modal">
     <button class="modal-close" onclick="closeAllModals()">✕</button>
     <div id="modal-inner"></div>
   </div>
@@ -685,12 +538,11 @@ for (let i = 0; i < 120; i++) {
   starsEl.appendChild(s);
 }
 
-// Modal data
 const modals = {
   plongee: {
     tag: '🤿 Plongée · Mer Rouge',
     title: 'Plongée en Mer Rouge',
-    body: 'La Mer Rouge est l\'une des mers les plus riches en biodiversité marine au monde. Avec un baptême déjà réalisé, tu peux accéder à des sites d\'exception en sortie bateau.',
+    body: 'La Mer Rouge est l\'une des mers les plus riches en biodiversité marine au monde. Avec un baptême déjà réalisé, tu peux accéder à des sites d\'exception en sortie bateau dès la première journée.',
     sections: [
       { title: 'Les meilleurs spots', items: [
         'Cable Wreck — Épave à 24 m, faune abondante, idéal débutant+',
@@ -702,26 +554,37 @@ const modals = {
         'Réserve 2–3 jours à l\'avance (places limitées)',
         'Sortie bateau : départ ~9h, retour ~16h',
         'Budget : 300–500 SAR par sortie matériel inclus',
-        'Si tu veux passer ta certification Open Water : 1 500–2 000 SAR'
+        'Certification Open Water sur place : 1 500–2 000 SAR'
       ]}
+    ],
+    links: [
+      { url: 'https://www.diveinjed.com', label: 'Dive In Jeddah', style: 'blue' },
+      { url: 'https://www.haddadscuba.com', label: 'Al-Haddad Scuba', style: 'blue' }
     ]
   },
   desert: {
     tag: '🏜️ 4x4 · Désert',
     title: 'Safari dans le désert',
-    body: 'Les premières grandes dunes du Hejaz commencent à 1h–1h30 au nord-est de Djeddah. En autonomie ou avec un guide, l\'expérience est spectaculaire surtout au coucher du soleil.',
+    body: 'Les premières grandes dunes du Hejaz commencent à 1h–1h30 au nord-est de Djeddah. Desert Night Tours propose une expérience complète 6–7h avec prise en charge incluse depuis Djeddah.',
     sections: [
-      { title: 'Options', items: [
-        'Safari organisé : 4x4 + dune bashing + camp bédouin (4h environ)',
-        'Dunes libres nord-est : 1h30 en voiture, exploration libre',
-        'Wadi Al-Lith sud : vallée encaissée + côte sauvage'
+      { title: 'Ce qui est inclus (Desert Night Tours)', items: [
+        'Transport en 4x4 climatisé depuis ton hôtel ou aéroport',
+        'Dune bashing avec chauffeur expert',
+        'Visite d\'une ferme de chameaux + balade à dos de chameau',
+        'Séance photo en costume traditionnel arabe',
+        'Café arabe, dattes, eau et boissons inclus',
+        'Dîner BBQ avec plats traditionnels sous les étoiles',
+        'Observation des étoiles + chicha'
       ]},
-      { title: 'Conseils pratiques', items: [
-        'Départ idéal : 15h–16h pour le coucher de soleil',
-        'En autonomie : dégonfler les pneus à 1,5–2 bar sur le sable',
-        'Toujours prévenir quelqu\'un de ton itinéraire',
-        'Prévoir 2L d\'eau minimum par personne'
+      { title: 'Infos pratiques', items: [
+        'Durée : 6–7 heures · Départ idéal : 15h–16h',
+        'Tarif : 349 SAR par personne',
+        'Départ depuis hôtels, malls ou aéroport de Djeddah',
+        'Contact : bookings@desertnighttours.com'
       ]}
+    ],
+    links: [
+      { url: 'https://www.desertnighttours.com/tour-package/evening-desert-safari-jeddah', label: 'Réserver sur desertnighttours.com', style: 'gold' }
     ]
   },
   taif: {
@@ -738,52 +601,54 @@ const modals = {
       ]},
       { title: 'Infos pratiques', items: [
         'Distance : 80 km, 1h de route depuis Djeddah',
-        'Conseil : rester dormir sur place pour profiter 2 jours pleins',
-        'Si tu es en mars/avril : Rose Festival — ambiance exceptionnelle'
+        'Conseil : rester dormir sur place pour 2 jours pleins',
+        'Mars/avril : Rose Festival — ambiance exceptionnelle'
       ]}
-    ]
+    ],
+    links: []
   },
   'cote-nord': {
     tag: '🏖️ Plage · 1h30 au nord',
     title: 'Côte Nord · Masturah Beach',
-    body: 'Les plages de la côte nord de Djeddah sont parmi les plus belles et les moins fréquentées de la mer Rouge. Eau turquoise et récifs accessibles en snorkeling.',
+    body: 'Les plages de la côte nord sont parmi les plus belles et les moins fréquentées de la mer Rouge. Eau turquoise et récifs accessibles en snorkeling.',
     sections: [
       { title: 'Activités', items: [
         'Snorkeling sur les récifs côtiers (matériel à apporter)',
         'Baignade et détente sur plages sauvages',
-        'Pêche depuis le bord (ambiance locale)',
+        'Pêche depuis le bord',
         'Coucher de soleil sur la mer Rouge'
       ]},
       { title: 'Infos pratiques', items: [
         'Distance : 1h–1h30 au nord de Djeddah',
         'Amener pique-nique et eau, peu de restaurants',
-        'Meilleure période : octobre à avril (moins chaud)',
-        'Idéal en combinaison avec une journée de plongée'
+        'Meilleure période : octobre à avril'
       ]}
-    ]
+    ],
+    links: []
   },
   'al-lith': {
     tag: '🚢 Port · 2h au sud',
     title: 'Al-Lith · Côte Sud',
-    body: 'Petit port de pêche authentique loin du tourisme de masse. L\'ambiance locale y est unique, et les plages sauvages entre Djeddah et Al-Lith sont parmi les plus préservées.',
+    body: 'Petit port de pêche authentique loin du tourisme de masse. Ambiance locale unique, plages sauvages préservées.',
     sections: [
       { title: 'À faire', items: [
         'Marché aux poissons tôt le matin (6h–9h)',
-        'Plages sauvages peu fréquentées entre Djeddah et Al-Lith',
+        'Plages sauvages peu fréquentées',
         'Snorkeling sur les récifs côtiers',
-        'Wadi Al-Lith — Vallée encaissée, mini-randonnée'
+        'Wadi Al-Lith — Vallée encaissée'
       ]},
       { title: 'Conseils', items: [
         'Partir tôt pour attraper le marché aux poissons',
-        'La route côtière elle-même vaut le détour',
-        'Combinable avec une nuit sur place pour 2 jours côte sud'
+        'La route côtière vaut le détour',
+        'Combinable avec une nuit sur place'
       ]}
-    ]
+    ],
+    links: []
   },
   badr: {
     tag: '🕌 Histoire · 2h30 nord-est',
     title: 'Badr · Site historique islamique',
-    body: 'Badr est l\'un des sites islamiques les plus significatifs — lieu de la première grande bataille de l\'islam en 624. Un voyage dans le temps à travers le désert du Hejaz.',
+    body: 'Badr est l\'un des sites islamiques les plus significatifs — lieu de la première grande bataille de l\'islam en 624 après J.-C.',
     sections: [
       { title: 'Sur place', items: [
         'Site de la bataille de Badr et ses monuments',
@@ -796,12 +661,13 @@ const modals = {
         'Excursion d\'une journée confortable',
         'Expérience spirituelle et culturelle unique'
       ]}
-    ]
+    ],
+    links: []
   },
   djeddah: {
     tag: '🏛️ UNESCO · Sur place',
     title: 'Al-Balad · Vieille ville de Djeddah',
-    body: 'Classée au patrimoine mondial de l\'UNESCO depuis 2014, la vieille ville de Djeddah est un labyrinthe de ruelles et de maisons historiques à moucharabiehs.',
+    body: 'Classée au patrimoine mondial de l\'UNESCO depuis 2014, la vieille ville est un labyrinthe de ruelles et de maisons historiques à moucharabiehs.',
     sections: [
       { title: 'Incontournables', items: [
         'Maisons à moucharabiehs (balcons en treillis de bois sculpté)',
@@ -811,16 +677,17 @@ const modals = {
         'Fontaine du Roi Fahd — La plus haute du monde'
       ]},
       { title: 'À savoir', items: [
-        'Visiter Al-Balad tôt le matin ou en soirée (moins chaud)',
+        'Visiter tôt le matin ou en soirée (moins chaud)',
         'Ambiance idéale après le coucher du soleil',
         'Nombreux restaurants et cafés dans la vieille ville'
       ]}
-    ]
+    ],
+    links: []
   },
   snorkeling: {
     tag: '🐠 Snorkeling · Gratuit',
     title: 'Snorkeling libre autour de Djeddah',
-    body: 'Pas besoin de réserver ni de sortie bateau pour voir des poissons tropicaux et des coraux. Plusieurs spots accessibles à 20–30 min de route depuis le centre.',
+    body: 'Pas besoin de réserver ni de sortie bateau. Plusieurs spots accessibles à 20–30 min de route pour voir poissons tropicaux et coraux.',
     sections: [
       { title: 'Spots recommandés', items: [
         'Obhur Creek — À 20 min au nord, récifs accessibles du bord',
@@ -830,10 +697,11 @@ const modals = {
       { title: 'Équipement', items: [
         'Masque + tuba + palmes (louer ou acheter à Djeddah)',
         'Pas besoin de bouteille ni de certification',
-        'Combinaison légère recommandée pour les oursins',
+        'Combinaison légère recommandée (oursins)',
         'Crème solaire minérale (respectueuse des coraux)'
       ]}
-    ]
+    ],
+    links: []
   }
 };
 
@@ -848,11 +716,14 @@ function openModal(id) {
   data.sections.forEach(s => {
     html += `<div class="modal-section">
       <div class="modal-section-title">${s.title}</div>
-      <ul class="modal-list">
-        ${s.items.map(i => `<li>${i}</li>`).join('')}
-      </ul>
+      <ul class="modal-list">${s.items.map(i => `<li>${i}</li>`).join('')}</ul>
     </div>`;
   });
+  if (data.links && data.links.length) {
+    data.links.forEach(l => {
+      html += `<a class="modal-cta ${l.style}" href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a> `;
+    });
+  }
   document.getElementById('modal-inner').innerHTML = html;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -869,6 +740,5 @@ function closeModal(e) {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAllModals(); });
 </script>
-
 </body>
 </html>
